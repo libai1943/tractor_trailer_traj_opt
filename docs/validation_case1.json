@@ -1,0 +1,61 @@
+{
+  "case_id": 1,
+  "duration": 44.180696823609857,
+  "wall_seconds": 17.634504,
+  "finite_elements": 100,
+  "configuration_points": 101,
+  "history": [
+    {
+      "stage": 2,
+      "iteration": 1,
+      "duration": 99.999993469486725,
+      "infeasibility": 0.0067074403252849919
+    },
+    {
+      "stage": 2,
+      "iteration": 2,
+      "duration": 100,
+      "infeasibility": 0.0025543821687472475
+    },
+    {
+      "stage": 2,
+      "iteration": 3,
+      "duration": 100,
+      "infeasibility": 0.0022340621539255322
+    },
+    {
+      "stage": 2,
+      "iteration": 4,
+      "duration": 96.178596224788464,
+      "infeasibility": 0.0023724591470297312
+    },
+    {
+      "stage": 2,
+      "iteration": 5,
+      "duration": 96.408577032518252,
+      "infeasibility": 0.0023554053931405519
+    },
+    {
+      "stage": 3,
+      "iteration": 1,
+      "duration": 44.437680485122,
+      "infeasibility": 0
+    },
+    {
+      "stage": 3,
+      "iteration": 2,
+      "duration": 44.180696823609857,
+      "infeasibility": 0
+    }
+  ],
+  "validation": {
+    "dynamics_residual": 2.494808103159496E-8,
+    "boundary_residual": 0,
+    "bound_violation": 0,
+    "collision_pairs": 0,
+    "self_collision_pairs": 0,
+    "workspace_violation": 0,
+    "finite": true,
+    "passed": true
+  }
+}

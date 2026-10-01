@@ -1,0 +1,37 @@
+{
+  "case_id": 2,
+  "duration": 47.059920851965529,
+  "wall_seconds": 17.5201898,
+  "finite_elements": 100,
+  "configuration_points": 101,
+  "history": [
+    {
+      "stage": 2,
+      "iteration": 1,
+      "duration": 61.244898623668668,
+      "infeasibility": 0.00050865358814924163
+    },
+    {
+      "stage": 3,
+      "iteration": 1,
+      "duration": 47.090760155312694,
+      "infeasibility": 0
+    },
+    {
+      "stage": 3,
+      "iteration": 2,
+      "duration": 47.059920851965529,
+      "infeasibility": 0
+    }
+  ],
+  "validation": {
+    "dynamics_residual": 2.6785875739676612E-8,
+    "boundary_residual": 0,
+    "bound_violation": 0,
+    "collision_pairs": 0,
+    "self_collision_pairs": 0,
+    "workspace_violation": 2.4956223398930888E-7,
+    "finite": true,
+    "passed": true
+  }
+}

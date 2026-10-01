@@ -1,0 +1,13 @@
+*.exe
+*.dll
+*.asv
+*.nl
+*.sol
+*.log
+*.mp4
+*.avi
+RunData/*
+!RunData/.gitkeep
+SearchGuidingPath.m
+private_sources/
+LoadOriginalCases.m
