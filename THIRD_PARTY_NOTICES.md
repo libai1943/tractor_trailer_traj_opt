@@ -1,10 +1,5 @@
-# External software
+# Dependencies
 
-Install the following components separately under their providers' licenses:
+CasADi and its IPOPT plugin, HSL MA97, and compiler runtime dependencies retain their own licenses. Install these separately; they are not included in this repository. See [CasADi](https://web.casadi.org/), [IPOPT](https://github.com/coin-or/Ipopt), and [HSL](https://licences.stfc.ac.uk/product/coin-hsl).
 
-- MATLAB and Image Processing Toolbox: [MathWorks](https://www.mathworks.com/company/aboutus/policies_statements.html).
-- AMPL: [installation and licensing](https://dev.ampl.com/ampl/install.html).
-- IPOPT: [COIN-OR project](https://github.com/coin-or/Ipopt).
-- HSL MA97: obtain a compatible distribution and license from the solver provider / [HSL](https://www.hsl.rl.ac.uk/).
-
-The repository contains no copies of third-party executables or DLLs. `SearchGuidingPath.p` is the protected project implementation generated using MATLAB P-code, not a third-party solver distribution. Project noncommercial terms do not replace the licenses of external software.
+The protected guiding-search libraries implement this project's planar A* component. They are covered by the project noncommercial license. Their compiler support libraries, where statically linked, retain the applicable GCC Runtime Library Exception or LLVM runtime terms. No third-party optimization library is embedded in these search binaries.

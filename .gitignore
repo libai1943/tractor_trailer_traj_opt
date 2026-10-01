@@ -1,13 +1,6 @@
+/build*/
+/results*/
 *.exe
-*.dll
-*.asv
-*.nl
-*.sol
+*.obj
+*.o
 *.log
-*.mp4
-*.avi
-RunData/*
-!RunData/.gitkeep
-SearchGuidingPath.m
-private_sources/
-LoadOriginalCases.m

@@ -1,8 +1,0 @@
-max_iter 3000
-max_cpu_time 120
-tol 1e-8
-mu_strategy adaptive
-linear_solver ma97
-print_level 0
-
-
