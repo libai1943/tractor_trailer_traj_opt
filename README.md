@@ -1,5 +1,7 @@
 # Tractor–Trailer Trajectory Optimization
 
+[下载 ZIP](https://github.com/libai1943/tractor_trailer_traj_opt/archive/refs/heads/main.zip) · [从这里开始](#用法与输出) · [阅读指南](#代码结构)
+
 本仓库是中文图书 **《非结构化场景自动驾驶轨迹规划技术》** 第九章“杂乱非结构化场景中的多体铰接车轨迹规划”的配套 C++ 实现，对应第 9.3.3 节的三阶段规划方法。
 
 English title translation: *Trajectory Planning Techniques for Autonomous Driving in Unstructured Environments*. **The book is written in Chinese.** The implementation uses C++17, CasADi and IPOPT to plan a minimum-time maneuver for one tractor towing three trailers through a curvy tunnel.
@@ -138,6 +140,18 @@ HSL 库名称可能为 `libhsl.dll`、`libcoinhsl-2.dll` 或发行版指定的�
 - `validation.json`：真实规划耗时、预处理耗时、残差和验证状态。
 
 每次都重新执行搜索与优化。数据包仅含场景、起终点和搜索地图，不包含预计算的答案轨迹。发生求解失败或最终验证失败时，程序返回非零退出码。验证针对配置点上的运动学、边界、限幅、矩形避障和车体自碰撞；不执行相邻配置之间的连续扫掠验证。
+
+### 用一行轨迹数据读懂四节车体
+
+`trajectory.csv` 的每一行对应同一时刻。后缀 `0` 表示牵引车，`1` 到 `3` 沿铰接顺序排到末节挂车。把 `x0,y0` 与 `x3,y3` 画在同一坐标系，就能看见牵引车和末节挂车经过弯道时走出的两条不同曲线。
+
+| 想核对什么 | 对应字段 | 读法 |
+|---|---|---|
+| 四节车体的姿态与运动方向 | `x0…x3`、`y0…y3`、`theta0…theta3`、`v0…v3` | 看同一行的相邻朝向差，并结合带符号速度判读倒车段。 |
+| 执行时间与计算时间 | `validation.json` 中的 `duration`、`planning_seconds`、`preprocessing_seconds` | 第一个量是车辆完成动作的模拟时长，后两个量是程序运行计时。 |
+| 离散约束 | `dynamics_residual`、`configuration_points`、`passed` | 对照 [验证函数](src/results.cpp) 看残差计算、矩形相交检查及通过条件。 |
+
+教材书目：李柏，《非结构化场景自动驾驶轨迹规划技术》，机械工业出版社，2026 年，第九章。[作者书目](https://faculty.ecnu.edu.cn/_s15/lb2_26496/main.psp)
 
 ## 代码结构
 
